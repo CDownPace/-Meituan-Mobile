@@ -91,11 +91,17 @@
             font-size: 16px;
             font-weight: 700;
           }
-          .price {
+          .goods-info-bottom{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            .price {
             color: #fb4e44;
             font-size: 16px;
             font-weight: 700;
           }
+          }
+          
         }
       }
     }
@@ -148,7 +154,14 @@
                   <div class="goods-info">
                     <div class="goods-name">{{goods.name}}</div>
                     <div class="month-sale">月售10份</div>
-                    <div class="price">￥{{goods.price}}</div>
+                    
+                    <div class="goods-info-bottom">
+                      <div class="price">￥{{goods.price}}</div>
+                      <stepper></stepper>
+                    </div>
+                    
+                    
+                   
                   </div>
                 </dd>
               </dl>
@@ -169,6 +182,7 @@ import BScroll from "better-scroll";
 import kfc from "../../data/kfc";
 // 左边拉动效果：better-scroll
 import GoodsDetail from "./GoodsDetail"
+import Stepper from './Stepper'
 
 export default {
   name: "Merchant",
@@ -195,7 +209,8 @@ export default {
     [Tab.name]: Tab,
     [Tabs.name]: Tabs,
     [BScroll.name]: BScroll,
-    [GoodsDetail.name]:GoodsDetail
+    [GoodsDetail.name]:GoodsDetail,
+    [Stepper.name]:Stepper
   },
   mounted() {
     const categories = kfc["categories"];
