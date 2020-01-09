@@ -107,7 +107,7 @@
 
 <template>
   <div class="merchant-container">
-    <van-nav-bar left-arrow></van-nav-bar>
+    <van-nav-bar left-arrow @click-left="onClickLeft"></van-nav-bar>
     <div class="header-group">
       <!-- 头 -->
       <img
@@ -208,21 +208,21 @@ export default {
       var goodsScroll = new BScroll(this.$refs.goods, {
         scrollY: true,
         click: true,
-          // 设置probeType为2，才能监听scroll事件
-          probeType:2
-      })
-         
-         goodsScroll.on("scroll",(pos)=>{
-           const y=Math.abs(pos.y);
-           const positions=this.positions;
-           for (let index=positions.length-1;index>=0;index--){
-             const position =positions[index];
-             if(y>=position){
-               this.currentIndex=index;
-               break
-             }
-           }
-         })
+        // 设置probeType为2，才能监听scroll事件
+        probeType: 2
+      });
+
+      goodsScroll.on("scroll", pos => {
+        const y = Math.abs(pos.y);
+        const positions = this.positions;
+        for (let index = positions.length - 1; index >= 0; index--) {
+          const position = positions[index];
+          if (y >= position) {
+            this.currentIndex = index;
+            break;
+          }
+        }
+      });
 
       this.menuScroll = menuScroll;
       this.goodsScroll = goodsScroll;
@@ -249,6 +249,9 @@ export default {
       // 滚动的时候如果想往上面滚动，就加上负号
       this.goodsScroll.scrollTo(0, -position, 500);
       this.currentIndex = index;
+    },
+    onClickLeft() {
+      this.$router.back();
     }
   }
 };
