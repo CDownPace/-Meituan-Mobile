@@ -26,7 +26,7 @@ const kfc = {
     "goods_list": [{
       "id": 2012,
       "name": "八块香辣鸡翅TN",
-      "picture": "https://p1.ssl.qhimgs1.com/sdr/400__/t01c25985dc25c08791.png",
+      "picture": "http://p1.meituan.net/xianfu/ed8484dc56c80c007690dd77caa0618c34816.jpg",
       "intro": "香辣多汁，口感鲜美。,主要原料:鸡翅，小麦粉",
       "price": "39.50",
       "category": 208

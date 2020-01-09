@@ -4,7 +4,7 @@ import Home from './components/Home'
 
 import Mine from './components/Mine'
 import Order from './components/Order'
-import Merchant from './components/Merchant'
+import Merchant from './components/Merchant/Merchant'
 
 Vue.use(VueRouter)
 const routes = [
