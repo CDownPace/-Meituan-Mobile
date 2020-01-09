@@ -157,7 +157,8 @@
                     
                     <div class="goods-info-bottom">
                       <div class="price">￥{{goods.price}}</div>
-                      <stepper></stepper>
+                      <stepper v-model="goods.count"></stepper>
+                      <!-- {{goods.count}} -->
                     </div>
                     
                     
@@ -171,8 +172,10 @@
       </van-tab>
       <van-tab title="评价">评价页面</van-tab>
       <van-tab title="商家">商家页面</van-tab>
-      <goods-detail :goods="detailGoods"></goods-detail>
+      
     </van-tabs>
+<goods-detail :goods="detailGoods"></goods-detail>
+    <cart :categories="categories"></cart>
   </div>
 </template>
 
@@ -183,6 +186,7 @@ import kfc from "../../data/kfc";
 // 左边拉动效果：better-scroll
 import GoodsDetail from "./GoodsDetail"
 import Stepper from './Stepper'
+import Cart from './Cart'
 
 export default {
   name: "Merchant",
@@ -210,10 +214,16 @@ export default {
     [Tabs.name]: Tabs,
     [BScroll.name]: BScroll,
     [GoodsDetail.name]:GoodsDetail,
-    [Stepper.name]:Stepper
+    [Stepper.name]:Stepper,
+    [Cart.name]:Cart
   },
   mounted() {
     const categories = kfc["categories"];
+    for (let category of categories){
+      for(let goods of category.goods_list){
+        goods.count=0;
+      }
+    }
     this.categories = categories;
     // console.log(this.categories);
     this.$nextTick(() => {
