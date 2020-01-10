@@ -7,6 +7,7 @@ import Order from './components/Order'
 import Merchant from './components/Merchant/Merchant'
 import SubmitOrder from "./components/SubmitOrder"
 import MTAddressList from "./components/MTAddressList"
+import MTAddressEdit from "./components/MTAddressEdit"
 
 
 Vue.use(VueRouter)
@@ -40,6 +41,16 @@ const routes = [
     path:"/address",
     component:MTAddressList,
     name:"address_list"
+  },{
+    path:"/address/add",
+    component:MTAddressEdit,
+    name:"address_add"
+   
+  },{
+    path:"/address/edit",
+    component:MTAddressEdit,
+    name:"address_edit"
+    
   }
 ]
 
