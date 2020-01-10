@@ -20,7 +20,8 @@ const store =new Vuex.Store({
      },
      clearEditingAddress(state){
        state.editingAddress={};
-     }
+     },
+     
    }
 })
 

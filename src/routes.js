@@ -3,12 +3,12 @@ import Vue from 'vue'
 import Home from './components/Home'
 
 import Mine from './components/Mine'
-import Order from './components/Order'
+import Order from './components/Order/Order'
 import Merchant from './components/Merchant/Merchant'
 import SubmitOrder from "./components/SubmitOrder"
 import MTAddressList from "./components/MTAddressList"
 import MTAddressEdit from "./components/MTAddressEdit"
-
+import Login from "./components/Login"
 
 Vue.use(VueRouter)
 const routes = [
@@ -51,7 +51,12 @@ const routes = [
     component:MTAddressEdit,
     name:"address_edit"
     
+  },{
+    path: "/login",
+    component: Login,
+    name: "login"
   }
+
 ]
 
 
