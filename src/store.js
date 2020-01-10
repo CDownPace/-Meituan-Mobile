@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 const store =new Vuex.Store({
    state:{
-     cart:[]
+     cart:[],
+     editingAddress:{}
    },
    mutaions:{
      setCart(state,goodsList){
@@ -13,6 +14,12 @@ const store =new Vuex.Store({
      },
      clearCart(state){
        state.cart=[]
+     },
+     setEditingAddress(state,address){
+       state.editingAddress=address
+     },
+     clearEditingAddress(state){
+       state.editingAddress={};
      }
    }
 })

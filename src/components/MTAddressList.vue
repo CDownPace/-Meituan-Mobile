@@ -4,9 +4,11 @@
 <van-address-list
   v-model="chosenAddressId"
   :list="list"
-  :disabled-list="disabledList"
+  
   @add="onAdd"
   @edit="onEdit"
+
+  
 />
 </div>
 </template>
@@ -21,6 +23,19 @@ export default{
       chosenAddressId: '1',
       list: [
         {
+          id: '3',
+          addressDetail:"三里屯101号",
+          areaCode:"11015",
+          city:"北京市",
+          county:"朝阳区",
+          isDefault:false,
+          
+          name: '李四',
+          postalCode:"",
+          province:"北京市",
+          tel:18954236458
+        },
+        {
           id: '1',
           name: '张三',
           tel: '13000000000',
@@ -32,6 +47,14 @@ export default{
           tel: '1310000000',
           address: '浙江省杭州市拱墅区莫干山路 50 号'
         }
+      ],
+      disabledList: [
+        {
+          id: '3',
+          name: '王五',
+          tel: '1320000000',
+          address: '浙江省杭州市滨江区江南大道 15 号'
+        }
       ]
     }
   },
@@ -39,12 +62,18 @@ export default{
     [AddressList.name]:AddressList,
     [MTNavBar.name]:MTNavBar
   },
+  mounted(){
+
+  },
   methods:{
     onAdd(){
       this.$router.push("/address/add")
     },
-    onEdit(){
-       console.log('goto Edit')
+    onEdit(item,index){
+      this.$store.commit("setEditingAddress",item)
+      this.$router.push("/address/edit")
+    
+      //  console.log('goto Edit')
     }
   }
 }

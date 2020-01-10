@@ -5,6 +5,7 @@
   :area-list="areaList"
   show-delete
   show-set-default
+  :address-info="addressInfo"
   @save="onSave"
   @delete="onDelete"
 
@@ -20,12 +21,28 @@ export default{
   name:"MTAddressEdit",
   data(){
     return {
-      areaList
+      areaList,
+      addressInfo:{}
     }
   },
   components:{
     [AddressEdit.name]:AddressEdit,
     [MTNavBar.name]:MTNavBar
+  },
+  computed:{
+    isEditing(){
+      if(this.$route.name=='address_edit'){
+        return true
+      }else{
+        return false
+      }
+    }
+  },
+  mounted(){
+    if(this.isEditing){
+       this.addressInfo=this.$store.state.editingAddress
+    }
+    
   },
   methods:{
     onSave(content){
