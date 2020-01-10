@@ -1,15 +1,3 @@
-<style scoped>
-.merchant-container >>> .van-nav-bar {
-  background: none;
-}
-
-.merchant-container >>> .van-hairline--bottom::after {
-  border: none;
-}
-.van-nav-bar >>> .van-icon {
-  color: white;
-}
-</style>
 
 <style scoped lang='scss'>
 .header-group {
@@ -113,7 +101,7 @@
 
 <template>
   <div class="merchant-container">
-    <van-nav-bar left-arrow @click-left="onClickLeft"></van-nav-bar>
+    <mt-nav-bar></mt-nav-bar>
     <div class="header-group">
       <!-- 头 -->
       <img
@@ -187,6 +175,7 @@ import kfc from "../../data/kfc";
 import GoodsDetail from "./GoodsDetail"
 import Stepper from './Stepper'
 import Cart from './Cart'
+import MTNavBar from '../Commen/MTNavBar'
 
 export default {
   name: "Merchant",
@@ -209,13 +198,14 @@ export default {
     }
   },
   components: {
-    [NavBar.name]: NavBar,
+    
     [Tab.name]: Tab,
     [Tabs.name]: Tabs,
     [BScroll.name]: BScroll,
     [GoodsDetail.name]:GoodsDetail,
     [Stepper.name]:Stepper,
-    [Cart.name]:Cart
+    [Cart.name]:Cart,
+    [MTNavBar.name]:MTNavBar
   },
   mounted() {
     const categories = kfc["categories"];
@@ -279,9 +269,7 @@ export default {
       this.goodsScroll.scrollTo(0, -position, 500);
       this.currentIndex = index;
     },
-    onClickLeft() {
-      this.$router.back();
-    },
+    
     goodsClick(category_index,goods_index){
       let category =this.categories[category_index]
       let goods=category.goods_list[goods_index]
