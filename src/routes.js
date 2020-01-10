@@ -5,6 +5,8 @@ import Home from './components/Home'
 import Mine from './components/Mine'
 import Order from './components/Order'
 import Merchant from './components/Merchant/Merchant'
+import SubmitOrder from "./components/SubmitOrder"
+
 
 Vue.use(VueRouter)
 const routes = [
@@ -27,6 +29,11 @@ const routes = [
     path: "/merchant/:merchant_id",
     component: Merchant,
     name: "merchan"
+  },
+  {
+    path:"/submitorder",
+    component:SubmitOrder,
+    name:"submit_order"
   }
 ]
 
