@@ -2,7 +2,7 @@
 <div class="">
 <mt-nav-bar leftArrowStyle="black" title="确认订单"></mt-nav-bar>
 <van-cell-group>
-  <van-cell title="请选择收货地址" icon="location-o" is-link>
+  <van-cell title="请选择收货地址" icon="location-o" is-link to="/address">
     <template slot="title" v-if="address">
       <div class="user-info">
         <span>{{address.realname}}</span>
