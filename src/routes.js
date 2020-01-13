@@ -33,25 +33,25 @@ const routes = [
     name: "merchan"
   },
   {
-    path:"/submitorder",
-    component:SubmitOrder,
-    name:"submit_order"
+    path: "/submitorder",
+    component: SubmitOrder,
+    name: "submit_order"
   },
   {
-    path:"/address",
-    component:MTAddressList,
-    name:"address_list"
-  },{
-    path:"/address/add",
-    component:MTAddressEdit,
-    name:"address_add"
-   
-  },{
-    path:"/address/edit",
-    component:MTAddressEdit,
-    name:"address_edit"
-    
-  },{
+    path: "/address",
+    component: MTAddressList,
+    name: "address_list"
+  }, {
+    path: "/address/add",
+    component: MTAddressEdit,
+    name: "address_add"
+
+  }, {
+    path: "/address/edit",
+    component: MTAddressEdit,
+    name: "address_edit"
+
+  }, {
     path: "/login",
     component: Login,
     name: "login"
@@ -65,3 +65,6 @@ const router = new VueRouter({
 })
 
 export default router;
+
+
+

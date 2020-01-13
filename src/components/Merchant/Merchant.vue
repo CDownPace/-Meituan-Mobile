@@ -1,5 +1,6 @@
 
 <style scoped lang='scss'>
+// 商家详情界面
 .header-group {
   background-color: #2e2f3b;
   padding: 10px;
@@ -138,7 +139,7 @@
               <dl v-for="(category,category_index) in categories" :key="category.name" class="goods-dl">
                 <dt class="category-name">{{category.name}}</dt>
                 <dd class="goods-item" v-for="(goods,goods_index) in category.goods_list" :key="goods.id" @click="goodsClick(category_index,goods_index)">
-                  <img src alt class="thumbnail" />
+                  <img :src="goods.picture" alt class="thumbnail" />
                   <div class="goods-info">
                     <div class="goods-name">{{goods.name}}</div>
                     <div class="month-sale">月售10份</div>
