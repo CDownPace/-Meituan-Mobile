@@ -276,7 +276,6 @@ export default {
       let goods=category.goods_list[goods_index]
       // console.log(goods)
       this.detailGoods=JSON.parse(JSON.stringify(goods));
-      // 解决第二次点击商品不会弹出
     }
   }
 };
